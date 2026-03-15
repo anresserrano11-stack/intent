@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intercambio de Ropa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+<div class="menu container">
+<a href="#" class="logo">REELOOK</a>
+
+<nav class="navbar">
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="publicar.html">Publicar prendas</a></li>
+<li><a href="zonas.html">ZonasAutorizadas</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</nav>
+
+</div>
+
+<div class="header-content container">
+
+<div class="header-txt">
+
+<h1>zonas autorizadas</h1>
+<p>
+Estas son las zonas donde se pueden realizar intercambios de ropa.<br>
+- Suba<br>
+- Engativá<br>  
+- Fontibón<br>
+- Usaquen<br>
+Estamos trabajando para ampliar las zonas autorizadas y brindar más opciones a nuestros usuarios. ¡Gracias por tu comprensión!
+
+
+<title>Mapa Localidades Bogotá</title>
+
+<!-- Librería Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+text-align: center;
+background:#f4f4f4;
+}
+
+h1{
+color:#2c3e50;
+}
+
+#map{
+height: 500px;
+width: 80%;
+margin: auto;
+border-radius: 10px;
+box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<h1>Localidades de Intercambio de Ropa</h1>
+<p>Suba, Engativá, Fontibón y Usaquén</p>
+
+<div id="map"></div>
+
+<!-- Script Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+// Crear mapa centrado en Bogotá
+var map = L.map('map').setView([4.7110, -74.0721], 11);
+
+// Cargar mapa base
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+// Marcadores de localidades
+
+L.marker([4.7435, -74.0830]).addTo(map)
+.bindPopup("Localidad de Suba");
+
+L.marker([4.7083, -74.1133]).addTo(map)
+.bindPopup("Localidad de Engativá");
+
+L.marker([4.6780, -74.1410]).addTo(map)
+.bindPopup("Localidad de Fontibón");
+
+L.marker([4.7220, -74.0310]).addTo(map)
+.bindPopup("Localidad de Usaquén");
+
+
+</script>
+</body>
